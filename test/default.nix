@@ -2,9 +2,36 @@
 let
   sources = import ../nix/sources.nix;
 
-  pkgs = import ../nix {
-    inherit system nixpkgs;
-  };
+  pkgs =
+    let
+      pkgs' = import ../nix {
+        inherit system nixpkgs;
+      };
+
+      older-pkgs = import ../nix {
+        inherit system;
+
+        nixpkgs = "nixpkgs-21.05";
+      };
+
+    in
+    pkgs' // {
+      # HACK Some of our tests here manually construct a Git repository which
+      #      newer Git versions have a problem with, saying:
+      #
+      # > fatal: detected dubious ownership in repository at '/nix/store/...'
+      # > To add an exception for this directory, call:
+      # >
+      # >     git config --global --add safe.directory /nix/store/...
+      #
+      # Unfortunately, adding an exception doesn't really seem to work and so
+      # for the testing purposes here we default to the older Git.
+      #
+      # Another approach would be to patch Git (commenting out that warning),
+      # but then `./script/test --nixpkgs ...` would stop working (since that
+      # patch wouldn't be applicable to the older Git versions).
+      git = older-pkgs.git;
+    };
 
   naersk = pkgs.callPackage ../default.nix {
     inherit (pkgs.rustPackages) cargo rustc;

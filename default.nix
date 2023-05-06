@@ -61,13 +61,33 @@ let
       # the top-level build
       buildTopLevel =
         let
-          drv =
+          drv' =
             build
               {
                 pname = config.packageName;
                 inherit (config) userAttrs src;
                 builtDependencies = lib.optional (! config.isSingleStep) buildDeps;
               };
+
+          # If the project we're building uses CMake, let's proactively get rid
+          # of `CMakeCache.txt`.
+          #
+          # That's because this file contains a dump of environmental variables
+          # from the deps-only derivation and it could happen that the main
+          # derivation uses different env-vars - when this happens, CMake will
+          # fail, saying:
+          #
+          # ```
+          # CMake Error: The current CMakeCache.txt directory ... is different than the directory ... where CMakeCache.txt was created.
+          # ```
+          drv = drv'.overrideAttrs (attrs: attrs // {
+            preBuild = (attrs.preBuild or "") + ''
+              find \
+                  -name CMakeCache.txt \
+                  -exec rm {} \;
+            '';
+          });
+
         in
           drv.overrideAttrs config.overrideMain;
     in

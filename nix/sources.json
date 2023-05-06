@@ -1,14 +1,26 @@
 {
     "agent-rs": {
-        "branch": "paulliu/add-cargo-lock",
+        "branch": "main",
         "description": "A collection of libraries and tools for building software around the Internet Computer, in Rust.",
         "homepage": "https://sdk.dfinity.org/",
-        "owner": "ninegua",
+        "owner": "dfinity",
         "repo": "agent-rs",
-        "rev": "4a22e590516bc79ec3c75a320f7941e7762ea098",
-        "sha256": "0sacddc34nlfgldqghlwchgzjki177h5dsgpmdv70cm8hfy0sg7l",
+        "rev": "71987142bb94a55ac0cb74a52396e01b6a142a16",
+        "sha256": "0hv3cg3f8jl0qpzm1qfrg1x7vbcqqv0mzjrgmh4g3w6f8xfj68is",
         "type": "tarball",
-        "url": "https://github.com/ninegua/agent-rs/archive/4a22e590516bc79ec3c75a320f7941e7762ea098.tar.gz",
+        "url": "https://github.com/dfinity/agent-rs/archive/71987142bb94a55ac0cb74a52396e01b6a142a16.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "fenix": {
+        "branch": "main",
+        "description": "Rust toolchains and rust-analyzer nightly for Nix [maintainer=@figsoda]",
+        "homepage": "",
+        "owner": "nix-community",
+        "repo": "fenix",
+        "rev": "65fdcbdc0bf35510a013d8a0883b0fa7a4ecd2a8",
+        "sha256": "1kqhwbd0abxx1hbvvw4ss7whl67p1w780i9f86r453d56qf6nh5g",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/fenix/archive/65fdcbdc0bf35510a013d8a0883b0fa7a4ecd2a8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lorri": {
@@ -53,10 +65,10 @@
         "homepage": null,
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6c2318e451fc0eaf338fb461d9bfcc99869de758",
-        "sha256": "1djwkvjnn26v0xw1swwh7dgmi0yl0b1kb8kansrdwk0jhhqbl7zq",
+        "rev": "89abc99d5b6351b2984c6126ef3bda7929905cb9",
+        "sha256": "088n804fbf2p4gd22nymlgflx14fnknns0xavfc5w2c3vmmk7ql1",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/6c2318e451fc0eaf338fb461d9bfcc99869de758.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/89abc99d5b6351b2984c6126ef3bda7929905cb9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs-21.05": {
@@ -83,28 +95,16 @@
         "url": "https://github.com/NixOS/nixpkgs/archive/432864f33c84af53192d4b23ee5871697e57f094.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "nixpkgs-mozilla": {
-        "branch": "master",
-        "description": "Mozilla overlay for Nixpkgs.",
-        "homepage": "",
-        "owner": "mozilla",
-        "repo": "nixpkgs-mozilla",
-        "rev": "85eb0ba7d8e5d6d4b79e5b0180aadbdd25d76404",
-        "sha256": "15a7zd7nrnfgjzs8gq2cpkxg7l3c38jradkxxyaf136kkqhlc0k4",
-        "type": "tarball",
-        "url": "https://github.com/mozilla/nixpkgs-mozilla/archive/85eb0ba7d8e5d6d4b79e5b0180aadbdd25d76404.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "nushell": {
         "branch": "main",
         "description": "A new type of shell",
         "homepage": "https://www.nushell.sh/",
         "owner": "nushell",
         "repo": "nushell",
-        "rev": "85bfdca578157072e51e6972d370cfe63b0fda77",
-        "sha256": "0virlm3wpzsavdlci725iw0f8amr6ijxg9p2xp2q41zngjgb3w98",
+        "rev": "6dc7ff2335c9547182094451cd40c19e66c0678b",
+        "sha256": "1hxrsh7bpi3x7fr8n6589iaak96svncd6ck2sq6d5smjlbjryn1c",
         "type": "tarball",
-        "url": "https://github.com/nushell/nushell/archive/85bfdca578157072e51e6972d370cfe63b0fda77.tar.gz",
+        "url": "https://github.com/nushell/nushell/archive/6dc7ff2335c9547182094451cd40c19e66c0678b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "ripgrep-all": {
